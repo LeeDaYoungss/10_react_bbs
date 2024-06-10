@@ -16,7 +16,7 @@ function Write({boardId, handleCancle, isModifyMode}){
   const navigate = useNavigate();
 
   let write = ()=>{
-    Axios.post('http://34.64.171.168:8000/insert',{ //post방식으로 넘김
+    Axios.post('http://localhost/insert',{ //post방식으로 넘김
       title: form.title,
       content: form.content
     })
@@ -32,7 +32,7 @@ function Write({boardId, handleCancle, isModifyMode}){
   }
 
   let update = ()=>{
-    Axios.post('http://34.64.171.168:8000/update',{ //post방식으로 넘김
+    Axios.post('http://localhost/update',{ //post방식으로 넘김
       // id, title, content 세개가 넘어옴
       id:boardId,
       title: form.title,
@@ -57,7 +57,7 @@ function Write({boardId, handleCancle, isModifyMode}){
     }
 
   let detail = ()=>{
-    Axios.get(`http://34.64.171.168:8000/detail?id=${boardId}`)
+    Axios.get(`http://localhost/detail?id=${boardId}`)
       .then(res=> {
         if(res.data.length > 0){
           setForm({

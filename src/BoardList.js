@@ -40,7 +40,7 @@ function BoardList(props){
   const navigate = useNavigate();
 
   let getList = () => {
-    Axios.get('http://34.64.171.168:8000/list')
+    Axios.get('http://localhost/list')
     .then(res => {
       const data = res.data;
       setBoardList(data);
@@ -90,7 +90,7 @@ function BoardList(props){
       boardIdList += `'${item}',`;
     });
     
-    Axios.post('http://34.64.171.168:8000/delete',{
+    Axios.post('http://localhost/delete',{
       boardIdList : boardIdList.substring(0, boardIdList.length -1)
      })
     .then( res => {     
